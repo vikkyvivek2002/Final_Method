@@ -1,26 +1,27 @@
-final class main_method
+ class main_method
 {
-	public void show()
+	public final void show()
 	{
 		System.out.println("Parent method .");
-		System.out.println("creation of child will not allowed");
+		System.out.println("creation of same method in child will not allowed");
 	}
 }
-class chilld 
+class chilld extends main_method
 {
-	public void show ()
+	public void show2 ()
 	{
 		System.out.println("this method can't overriding");
+		System.out.println("'show' method con't be used in child class");
 	}
 }
 public class Final_Method {
 
 	public static void main(String[] args) {
 
-        main_method obj2 = new main_method();
-        obj2.show();
+        
         chilld obj = new chilld();
 		obj.show();
+		obj.show2();
 	}
 
 }
